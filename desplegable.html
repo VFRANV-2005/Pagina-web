@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+.menu {
+  float: left;
+  width: 20%;
+}
+
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.menuitem a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.menuitem a:hover {
+  color: blue;
+}
+
+.dropdown {
+  padding: 8px 0;
+}
+
+.dropbtn {
+  font-size: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background-color: inherit;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  color: blue;
+}
+
+.show {
+  display: block;
+}
+
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.right {
+  background-color: lightblue;
+  float: left;
+  width: 20%;
+  padding: 10px 15px;
+  margin-top: 7px;
+}
+
+@media only screen and (max-width:800px) {
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div style="background-color:#f1f1f1;padding:15px;">
+  <h1>DESPLEGABLE</h1>
+</div>
+
+<div style="overflow:auto">
+  <div class="menu">
+    <div class="menuitem dropdown">
+      <button class="dropbtn" onclick="myFunction()">Páginas web <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content" id="myDropdown">
+        <a href="horizontal.html">Horizontal</a>
+        <a href="vertical.html">Vertical</a>
+        <a href="desplegable.html">Desplegable</a>
+        <a href="index.html">Índice</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background-color:#f1f1f1;text-align:center;padding:10px;margin-top:7px;font-size:12px;">
+  Francisco José March Benítez.
+</div>
+
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+</script>
+
+</body>
+</html>
